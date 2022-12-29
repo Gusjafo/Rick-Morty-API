@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <mat-button-toggle-group [disabled]="disableButtons" #group="matButtonToggleGroup" name="fontStyle"
+    aria-label="Font Style" [value]="selectedValue" (change)="onValChange(group.value)">
+    <mat-button-toggle value="character">Character</mat-button-toggle>
+    <mat-button-toggle value="location">Location</mat-button-toggle>
+    <mat-button-toggle value="episode">Episode</mat-button-toggle>
+  </mat-button-toggle-group>
+  <span class="example-spacer"></span>
+  <button mat-stroked-button [disabled]="disableButtons" (click)="goCompare()" [disabled]="disabled">Compare
+    characters...</button>
+  <button mat-stroked-button [disabled]="disableButtons" (click)="goCreate()" color="basic" class="create" aria-label="Create icon">
+    Create character
+  </button>
+  <app-search name="header"></app-search>
+</mat-toolbar>

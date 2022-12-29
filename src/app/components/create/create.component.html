@@ -1,0 +1,41 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="checkoutForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input id="name" matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Gender</mat-label>
+      <select matNativeControl>
+        <option value="unknown">unknown</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Genderless">Genderless</option>
+      </select>
+      <!-- <input id="gender" matInput formControlName="gender"> -->
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Located</mat-label>
+      <input id="locate" matInput formControlName="locate">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Picture</mat-label>
+      <input id="img" matInput formControlName="img">
+    </mat-form-field>
+
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <button mat-raised-button class="button" type="submit">Create</button>
+        <button mat-raised-button (click)="goHome()" class="button">Cancel</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+<div class="button-home">
+  <button (click)="goHome()" color="primary" mat-mini-fab aria-label="Example icon button with a home icon">
+    <mat-icon>home</mat-icon>
+  </button>
+</div>

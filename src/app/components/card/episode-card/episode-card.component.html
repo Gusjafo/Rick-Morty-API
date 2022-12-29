@@ -1,0 +1,11 @@
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <mat-card-title>Name: {{user.name}}</mat-card-title>
+    <mat-card-subtitle>Air date: <b>{{user.air_date}}</b></mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    Episode:<b> {{user.episode}}</b><br>
+  </mat-card-content>
+  <button class="button-container" (click)="moreInfo()" mat-raised-button aria-label="icon button with a info icon">+
+    Info</button>
+</mat-card>

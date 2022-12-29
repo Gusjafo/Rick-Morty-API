@@ -1,0 +1,17 @@
+.container {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.example-button-container {
+  position: fixed;
+  float: right;
+  cursor: pointer;
+  right: 8px;
+  bottom: 14px;
+  z-index: 1000;
+  opacity: 0.8;
+}

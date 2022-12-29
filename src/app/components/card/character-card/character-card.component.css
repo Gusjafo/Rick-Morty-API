@@ -1,0 +1,20 @@
+mat-card {
+  width: 45vw;
+  margin: 10px;
+  background-color: rgb(205, 205, 203);
+}
+
+.button-container {
+  position: absolute;
+  float: right;
+  cursor: pointer;
+  right: 12px;
+  bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  mat-card {
+    width: 90vw;
+    margin: 5px;
+  }
+}

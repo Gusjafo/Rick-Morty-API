@@ -1,0 +1,26 @@
+table {
+  margin: 90px auto 0;
+  width: 90vw;
+}
+
+.example-button-container {
+  position: fixed;
+  float: right;
+  cursor: pointer;
+  right: 26px;
+  bottom: 14px;
+  z-index: 1000;
+  opacity: 0.8;
+}
+
+img {
+  padding-top: 5px;
+}
+
+td.mat-cell:last-of-type {
+  padding-right: 0;
+}
+
+th.mat-header-cell:last-of-type {
+  padding-right: 0;
+}

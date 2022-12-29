@@ -1,0 +1,13 @@
+mat-card {
+  width: 45vw;
+  margin: 10px;
+  background-color:rgb(205, 205, 203);
+  
+}
+
+@media (max-width: 600px) {
+  mat-card {
+    width: 90vw;
+    margin: 5px;
+  }
+}

@@ -1,0 +1,11 @@
+<section class="container">
+  <div class="example-button-container">
+    <button (click)="scrollToTop()" color="primary" mat-mini-fab aria-label="Example icon button with a home icon">
+      <mat-icon>expand_less</mat-icon>
+    </button>
+  </div>
+  <app-character-card *ngFor="let character of data.characters" [user]="character"></app-character-card>
+  <app-location-card *ngFor="let location of data.locations" [user]="location"></app-location-card>
+  <app-episode-card *ngFor="let episode of data.episodes" [user]="episode"></app-episode-card>
+</section>
+
