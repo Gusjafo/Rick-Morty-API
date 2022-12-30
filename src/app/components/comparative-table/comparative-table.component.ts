@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data-handle/data.service';
 import { Router } from '@angular/router';
 import { CommonService } from 'src/app/services/common/common.service';
+import { CharacterCompare } from 'src/app/model/character';
 
 @Component({
   selector: 'app-comparative-table',
@@ -19,7 +20,7 @@ export class ComparativeTableComponent implements OnInit {
     'shared',
     'img'
   ];
-  dataSource: any[];
+  dataSource: CharacterCompare[];
 
   constructor(
     private data: DataService,
@@ -27,7 +28,7 @@ export class ComparativeTableComponent implements OnInit {
     private common: CommonService
   ) {
     this.dataSource = this.data.characToCompare;
-    this.calculateSharedEpisodesBetweenCharacters();
+    this.calculateSharedEpisodesBetweenCharacters(this.data.characToCompare);
   }
 
   ngOnInit(): void {}
@@ -42,16 +43,16 @@ export class ComparativeTableComponent implements OnInit {
     this.route.navigate(['']);
   }
 
-  calculateSharedEpisodesBetweenCharacters() {
+  calculateSharedEpisodesBetweenCharacters(data: CharacterCompare[]) {
     // get amount of episodes by character
     let episodesCharacterA:number[] = this.common.getEpisodes(
-      this.dataSource[0].episode
+      data[0].episode
     );
     let episodesCharacterB:number[] = this.common.getEpisodes(
-      this.dataSource[1].episode
+      data[1].episode
     );
     let episodesCharacterC:number[] = this.common.getEpisodes(
-      this.dataSource[2].episode
+      data[2].episode
     );
 
     // compare A-B, A-C, B-C

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from 'src/app/services/data-handle/data.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { Character, mockUser } from 'src/app/model/character';
 
 @Component({
   selector: 'app-character-card',
@@ -9,7 +10,7 @@ import { CommonService } from 'src/app/services/common/common.service';
   styleUrls: ['./character-card.component.css'],
 })
 export class CharacterCardComponent implements OnInit {
-  @Input() public user: any;
+  @Input() public user: Character;
   public someEpisode: number = 1;
   buttonState: Observable<boolean> = this.data.fullCharactersList;
   buttonSte: boolean = true;
@@ -18,6 +19,7 @@ export class CharacterCardComponent implements OnInit {
     this.buttonState.subscribe((value) => {
       this.buttonSte = value;
     });
+    this.user = mockUser;
   }
 
   ngOnInit(): void {

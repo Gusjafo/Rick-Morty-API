@@ -23,10 +23,8 @@
     <mat-button-toggle value="episode">Episode</mat-button-toggle>
   </mat-button-toggle-group>
   <span class="example-spacer"></span>
-  <button mat-stroked-button [disabled]="disableButtons" (click)="goCompare()"
-    [disabled]="disabled">Compare
-    characters...</button>
-  <button mat-stroked-button *ngIf="showButtons" [disabled]="disableButtons" (click)="goCreate()" color="basic"
+  <button mat-stroked-button [disabled]="disableButtons" (click)="goCompare()" [disabled]="disabled">Compare</button>
+  <button mat-stroked-button *ngIf="showButtons" [disabled]="disableButtons" (click)="goCreate()"
     class="create" aria-label="Create icon">
     Create character
   </button>

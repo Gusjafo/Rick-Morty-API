@@ -1,5 +1,6 @@
 import { Component, Inject, Input } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Episode } from 'src/app/model/episode';
 
 @Component({
   selector: 'app-episode-card',
@@ -7,9 +8,10 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./episode-card.component.css'],
 })
 export class EpisodeCardComponent {
-  @Input() public user: any;
+  @Input() public user!: Episode;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+  }
 
   moreInfo() {
     this.dialog.open(DialogElements, { data: this.user });

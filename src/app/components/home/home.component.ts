@@ -24,11 +24,6 @@ export class HomeComponent implements OnInit {
     let number = event.srcElement.children[0].scrollTop;
     let temp: number = elementHight?.offsetHeight || 900;
 
-    console.debug('screen.height', screen.height);
-    console.debug('offsetHeight', elementHight?.offsetHeight);
-    console.debug('I am scrolling ' + number);
-    console.debug('----------------------');
-
     if (number >= temp - screen.height) {
       this.data.loadMore();
     }

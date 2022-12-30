@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DataService } from 'src/app/services/data-handle/data.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CharacterCardComponent } from './character-card.component';
 
@@ -10,6 +11,7 @@ describe('CharacterCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [CharacterCardComponent],
       providers: [{ provide: DataService }, { provide: CommonService }],
     }).compileComponents();

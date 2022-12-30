@@ -9,18 +9,18 @@ export class DataService {
   // full list of characters to compare
   public fullCharactersList: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
-        
+
   public disableButtonsToolbar: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
-  
+
   // actual list selected on toolbar
   public actualList: BehaviorSubject<string> = new BehaviorSubject<string>(
     'character'
   );
 
-  public page: number = 1;                
-  private hasMorePages: boolean = true;   
-  public search: string = '';             
+  public page: number = 1;
+  private hasMorePages: boolean = true;
+  public search: string = '';
   public characters: any = [];
   public charactersAdded: any = [];
   public locations: any = [];
