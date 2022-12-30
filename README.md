@@ -1,71 +1,27 @@
-# Baufest: Challenge Angular
-## Consideraciones Técnicas
-Queda a criterio del evaluado:
-- La elección del framework CSS a utilizar (boostrap, material, etc)
-- La elección de un componente de terceros para renderizado de tablas
-- La elección de una biblioteca http para comunicación con APIs
+# Rick & Morty API
 
-## **Enunciado**
-Haciendo uso de la [API Pública](https://rickandmortyapi.com/) de Rick & Morty, resolver:
+## Development server
 
-## Barra de búsqueda
-Desarrollar una barra de búsqueda que permita realizar consultas por episodios, ubicaciones o personajes. La visualización de resultados debera realizarse en un formato de tabla
+Run `npm install` to install dependencies.
 
-### *Bonus (Opcional)*
-Implementar la visualización de resultados por medio de cards
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-### Búsqueda por Personaje
-Mostrar:
-- Nombre
-- Género
-- Ubicación
-- Un episodio en el que haya aparecido (debe variar cada vez que se muestra el personaje)
-- Foto
+## Code scaffolding
 
-### Búsqueda por Ubicación
-Mostrar:
-- Nombre
-- Tipo
-- Dimensión
-- Cantidad de residentes
-- Fecha de creación
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-### Búsqueda por Episodios
-Mostrar:
-- Nombre
-- Fecha de emisión
-- Código de episodio
+## Build
 
-## Comparativa de personajes
-Reutilizando la barra de búsqueda del punto anterior, permitir realizar una comparación entre personajes teniendo en cuenta los siguientes campos:
-- Nombre
-- Género
-- Ubicación
-- Especie
-- Estado
-- Cantidad de episodios que compartieron con cada personaje comparado
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### Consideraciones
-- El máximo de comparaciones es de 3 personajes por búsqueda
-- La visualización de esta sección queda a criterio del evaluado
+## Running unit tests
 
-## Detalle de episodios
-Al realizar una búsqueda por episodios, se debe poder ofrecer un mayor nivel de detalle de los episodios por medio de una acción de “+ info”
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### Consideraciones
-- El detalle debe mostrar:
-  - La información presentada en los resultados de la búsqueda
-  - La cantidad de personajes que aparecen en el episodio
-- La visualización de esta sección queda a criterio del evaluado
+## Running end-to-end tests
 
-## Agregar un personaje
-A través de un formulario, se requiere poder dar de alta un personaje. Los campos a solicitar son:
-- Nombre
-- Género
-- Ubicación
-- Foto
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-### Consideraciones
-- El personaje debe existir dentro del contexto de la aplicación web
-- Debera visualizarse como parte de los resultados de búsqueda
+## Further help
 
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
