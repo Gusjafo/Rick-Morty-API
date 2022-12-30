@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -6,12 +6,10 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './episode-card.component.html',
   styleUrls: ['./episode-card.component.css'],
 })
-export class EpisodeCardComponent implements OnInit {
+export class EpisodeCardComponent {
   @Input() public user: any;
 
   constructor(public dialog: MatDialog) {}
-
-  ngOnInit(): void {}
 
   moreInfo() {
     this.dialog.open(DialogElements, { data: this.user });
@@ -23,8 +21,8 @@ export class EpisodeCardComponent implements OnInit {
   templateUrl: './dialog-elements.html',
 })
 export class DialogElements {
-  totalCharacteres: number = 0
+  totalCharacteres: number = 0;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-this.totalCharacteres = data.characters.length
+    this.totalCharacteres = data.characters.length;
   }
 }

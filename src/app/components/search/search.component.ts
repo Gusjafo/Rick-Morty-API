@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DataService } from 'src/app/services/data-handle/data.service';
 import { debounceTime } from 'rxjs/operators';
-import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-search',

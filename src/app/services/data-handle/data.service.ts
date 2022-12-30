@@ -6,22 +6,26 @@ import { ResourcesService } from '../resources/resources.service';
   providedIn: 'root',
 })
 export class DataService {
+  // full list of characters to compare
   public fullCharactersList: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
+        
   public disableButtonsToolbar: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
-  public actualList: BehaviorSubject<string> =
-    new BehaviorSubject<string>('character');
+  
+  // actual list selected on toolbar
+  public actualList: BehaviorSubject<string> = new BehaviorSubject<string>(
+    'character'
+  );
 
-  public page: number = 1;
-  private hasMorePages: boolean = true;
-  public search: string = '';
+  public page: number = 1;                
+  private hasMorePages: boolean = true;   
+  public search: string = '';             
   public characters: any = [];
   public charactersAdded: any = [];
   public locations: any = [];
   public episodes: any = [];
   public characToCompare: any = [];
-  // public actualList: string = 'character';
   public placeHolder: string = 'Search...';
   public charactersList: number = 0;
   public disableButtons: boolean = false;
@@ -32,6 +36,7 @@ export class DataService {
     this.getData();
   }
 
+  // get data from API
   getData() {
     let params = `${this.actualList.value}/?page=${this.page}&name=${this.search}`;
     this.resources.getData(params).subscribe((data) => {
@@ -66,6 +71,7 @@ export class DataService {
     });
   }
 
+  // load more data from API
   loadMore() {
     if (this.hasMorePages) {
       this.page += 1;
@@ -73,6 +79,7 @@ export class DataService {
     }
   }
 
+  // search element of list
   doSearch() {
     this.page = 1;
     this.characters = [];
@@ -84,6 +91,7 @@ export class DataService {
     this.getData();
   }
 
+  // enable compare page
   compareCharacters() {
     if (this.characToCompare.length >= 3) {
       this.fullCharactersList.next(true);

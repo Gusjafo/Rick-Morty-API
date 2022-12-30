@@ -22,12 +22,14 @@ export class CharacterCardComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.user.episode != undefined) {
-      let episodes = this.common.getEpisodes(this.user.episode);
+      // random episode of character'list episodes
+      let episodes: number[] = this.common.getEpisodes(this.user.episode);
       this.someEpisode = episodes[Math.floor(Math.random() * episodes.length)];
     }
   }
 
-  addCard() {
+  // add character to compare list
+  addCharacterToCompare() {
     this.buttonSte = true;
     this.data.characToCompare.push(this.user);
     this.data.charactersList++;

@@ -1,15 +1,35 @@
 <mat-toolbar>
-  <mat-button-toggle-group [disabled]="disableButtons" #group="matButtonToggleGroup" name="fontStyle"
-    aria-label="Font Style" [value]="selectedValue" (change)="onValChange(group.value)">
+  <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="!showButtons" class="example-icon"
+    aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <mat-button-toggle-group class="hidden-menu" aria-orientation="vertical" vertical *ngIf="!showButtons"
+      [disabled]="disableButtons" #group="matButtonToggleGroup" name="fontStyle" aria-label="Font Style"
+      [value]="selectedValue" (change)="onValChange(group.value)">
+      <mat-button-toggle value="character">Character</mat-button-toggle>
+      <mat-button-toggle value="location">Location</mat-button-toggle>
+      <mat-button-toggle value="episode">Episode</mat-button-toggle>
+    </mat-button-toggle-group>
+    <button class="hidden-menu" mat-stroked-button *ngIf="!showButtons" [disabled]="disableButtons"
+      (click)="goCreate()">
+      Create character
+    </button>
+  </mat-menu>
+  <mat-button-toggle-group *ngIf="showButtons" [disabled]="disableButtons" #group="matButtonToggleGroup"
+    name="fontStyle" aria-label="Font Style" [value]="selectedValue" (change)="onValChange(group.value)">
     <mat-button-toggle value="character">Character</mat-button-toggle>
     <mat-button-toggle value="location">Location</mat-button-toggle>
     <mat-button-toggle value="episode">Episode</mat-button-toggle>
   </mat-button-toggle-group>
   <span class="example-spacer"></span>
-  <button mat-stroked-button [disabled]="disableButtons" (click)="goCompare()" [disabled]="disabled">Compare
+  <button mat-stroked-button [disabled]="disableButtons" (click)="goCompare()"
+    [disabled]="disabled">Compare
     characters...</button>
-  <button mat-stroked-button [disabled]="disableButtons" (click)="goCreate()" color="basic" class="create" aria-label="Create icon">
+  <button mat-stroked-button *ngIf="showButtons" [disabled]="disableButtons" (click)="goCreate()" color="basic"
+    class="create" aria-label="Create icon">
     Create character
   </button>
+  <span class="example-spacer"></span>
   <app-search name="header"></app-search>
 </mat-toolbar>

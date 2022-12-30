@@ -1,6 +1,7 @@
 mat-toolbar {
   position: fixed;
   position: -webkit-fixed;
+  display: flex;
   top: 0;
   z-index: 1000;
 }
@@ -25,3 +26,10 @@ a:hover {
   margin: 0 20px;
 }
 
+.hidden-menu {
+  display: flex;
+}
+
+.hidden-menu button {
+  width: auto;
+}

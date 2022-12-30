@@ -24,3 +24,18 @@ td.mat-cell:last-of-type {
 th.mat-header-cell:last-of-type {
   padding-right: 0;
 }
+
+@media (max-width: 700px) {
+  mat-table {
+    font-size: small;
+    width: 90vw;
+    margin: 5px;
+  }
+
+  .mat-body,
+  .mat-body-1,
+  .mat-typography {
+    font: 100 6px/18px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+  }
+}

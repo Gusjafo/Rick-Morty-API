@@ -8,11 +8,9 @@
     Location:<b> {{user.location.name}}</b><br>
     Episode:<b> {{someEpisode}}</b>
   </mat-card-content>
-  <!-- <mat-card-actions>
-    <button mat-raised-button color="link" mat-button>+Compare</button>
-  </mat-card-actions> -->
   <div class="button-container">
-    <button mat-mini-fab (click)="addCard()" matTooltip="add to compare list" color="accent" [disabled]="buttonSte" aria-label="Example icon button with a plus one icon">
+    <button mat-mini-fab (click)="addCharacterToCompare()" matTooltip="add to compare list" color="accent"
+      [disabled]="buttonSte" aria-label="Example icon button with a plus one icon">
       <mat-icon>plus_one</mat-icon>
     </button>
   </div>
